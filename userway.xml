@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  ~ * @package Module UserWay for Joomla! 3.10.3
+  ~ * @version userway.xml: 191153 you radik
+  ~ * @author UserWay Development Team
+  ~ * @copyright (C) 2021 - UserWay Inc.
+  ~ * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+  -->
+
+<extension type="component" version="3.0" method="upgrade">
+    <name>COM_USERWAY</name>
+    <creationDate>11/17/21, 10:00 AM</creationDate>
+    <author>UserWay Development Team</author>
+    <authorEmail>platforms@userway.org</authorEmail>
+    <authorUrl>https://userway.org/</authorUrl>
+    <copyright>Copyright (C) 2017 - 2021 UserWay, Inc. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <version>1.0.8</version>
+    <description><![CDATA[UserWay’s AI-Powered Accessibility Widget is trusted by millions of websites around the world. The
+        widget was developed specifically to provide business owners of any size an affordable yet comprehensive
+        accessibility solution while also making the web barrier-free for users regardless of ability.]]>
+    </description>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <administration>
+        <menu>COM_USERWAY</menu>
+        <files folder="administrator">
+            <file>userway.php</file>
+            <filename>index.html</filename>
+            <filename>controller.php</filename>
+            <filename>userway.php</filename>
+            <filename>helper.php</filename>
+            <folder>language</folder>
+            <folder>sql</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+
+    <languages folder="administrator/language">
+        <language tag="en-US">en-US/en-US.com_userway.ini</language>
+        <language tag="en-US">en-US/en-US.com_userway.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.com_userway.ini</language>
+        <language tag="en-GB">en-GB/en-GB.com_userway.sys.ini</language>
+    </languages>
+
+    <updateservers>
+        <server type="extension" priority="2" name="Userway Extension Updates">
+            https://cdn.userway.org/platforms/joomlaUserwayExtension.xml
+        </server>
+    </updateservers>
+</extension>
