@@ -7,7 +7,7 @@
 
 ### Copyright Example 
 
-    * @package Module UserWay for Joomla! 3.10.3
+    * @package Module UserWay for Joomla
     * @version $file.className: $today.day$today.hour$today.minute you $username
     * @author UserWay Development Team
     * @copyright (C) $today.year - UserWay Inc.
