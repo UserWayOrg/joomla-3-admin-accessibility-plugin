@@ -1,4 +1,4 @@
-# Joomla Userway Admin Accessibility Plugin
+# _[Joomla]_ Userway Admin Accessibility Plugin
 
 ### Build
 
