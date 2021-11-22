@@ -47,7 +47,7 @@ class WidgetHelper
         }
 
         $url = rtrim(JURI::root(), '/');
-        $widgetUrl = "https://api.userway.org/api/apps/joomla?storeUrl={$url}&active={$widgetState}";
+        $widgetUrl = "https://qa.userway.dev/api/apps/joomla?storeUrl={$url}&active={$widgetState}";
 
         if ($widgetAccount !== '') {
             $widgetUrl .= '&account_id=' . $widgetAccount;
