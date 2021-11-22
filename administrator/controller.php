@@ -75,38 +75,36 @@ class UserwayController extends JControllerLegacy
      */
     public function update()
     {
-
         try {
             $input = JFactory::getApplication()->input;
             $state = $input->get('state', null, 'string');
 
             if (is_null($state)) {
-                throw new Exception('Invalid Update Parameter', 422);
+                throw new Exception('invalid update parameter', 422);
             }
 
             $entry = $this->getAccount();
             if (is_null($entry)) {
-                return;
+                throw new Exception('account not found', 422);
             }
 
-            $query = $this->db->getQuery(true);
+            $updateQuery = $this->db->getQuery(true);
             $set = array(
-                $this->db->quoteName('state') . ' = ' . $this->db->quote($state === '1'),
+                $this->db->quoteName('state') . ' = ' . $this->db->quote($state),
                 $this->db->quoteName('updated_time') . ' = ' . $this->getDate()
             );
-
-            $query->update('#__userway')
+            $updateQuery->update('#__userway')
                 ->set($set)
-                ->where('account_id', $entry->account_id);
+                ->where($this->db->quoteName('account_id') . ' = ' . $this->db->quote($entry->account_id));
 
-            $this->db->setQuery($query);
+            $this->db->setQuery($updateQuery);
             $this->db->query();
-
             $accountState = $this->getAccount();
 
             echo json_encode($accountState);
         } catch (Exception $e) {
-            echo 'something went wrong';
+            var_dump($e->getTraceAsString());
+            var_dump($e->getMessage());
         } finally {
             jexit();
         }
@@ -118,8 +116,8 @@ class UserwayController extends JControllerLegacy
     private function getAccount()
     {
         $query = $this->db->getQuery(true);
-        $query->select($this->db->quoteName(array('state', 'account_id')))
-            ->from($this->db->quoteName('#__userway'));
+        $query->select($this->db->quoteName(['state', 'account_id']));
+        $query->from($this->db->quoteName('#__userway'));
 
         $this->db->setQuery($query);
         $this->db->query();

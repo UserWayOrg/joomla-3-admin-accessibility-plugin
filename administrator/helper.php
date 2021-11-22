@@ -26,6 +26,15 @@ class WidgetHelper
         return $db->loadObject();
     }
 
+    static function getSiteUrl(){
+        $mainframe = JFactory::getApplication('site');
+        if( isset($mainframe) && is_object($mainframe)) {
+            return $mainframe->isAdmin() ? $mainframe->getSiteURL() : JURI::base();
+        } else {
+            return JURI::base();
+        }
+    }
+
     public static function getWidget()
     {
         $widgetData = WidgetHelper::getCurrentWidgetData();
@@ -37,8 +46,7 @@ class WidgetHelper
             $widgetAccount = $widgetData->account_id ?: '';
         }
 
-
-        $url = urlencode((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']);
+        $url = rtrim(JURI::root(), '/');
         $widgetUrl = "https://api.userway.org/api/apps/joomla?storeUrl={$url}&active={$widgetState}";
 
         if ($widgetAccount !== '') {
