@@ -103,8 +103,8 @@ class UserwayController extends JControllerLegacy
 
             echo json_encode($accountState);
         } catch (Exception $e) {
-            var_dump($e->getTraceAsString());
-            var_dump($e->getMessage());
+//             var_dump($e->getTraceAsString());
+//             var_dump($e->getMessage());
         } finally {
             jexit();
         }
