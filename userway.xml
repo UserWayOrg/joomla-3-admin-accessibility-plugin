@@ -15,7 +15,7 @@
     <authorUrl>https://userway.org/</authorUrl>
     <copyright>Copyright (C) 2017 - 2021 UserWay, Inc. All rights reserved.</copyright>
     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
-    <version>1.0.8</version>
+    <version>1.0.14</version>
     <description><![CDATA[UserWay’s AI-Powered Accessibility Widget is trusted by millions of websites around the world. The
         widget was developed specifically to provide business owners of any size an affordable yet comprehensive
         accessibility solution while also making the web barrier-free for users regardless of ability.]]>
@@ -50,10 +50,10 @@
     </administration>
 
     <languages folder="administrator/language">
-        <language tag="en-US">en-US/en-US.com_userway.ini</language>
-        <language tag="en-US">en-US/en-US.com_userway.sys.ini</language>
-        <language tag="en-GB">en-GB/en-GB.com_userway.ini</language>
-        <language tag="en-GB">en-GB/en-GB.com_userway.sys.ini</language>
+        <language tag="en-US">./en-US/en-US.com_userway.ini</language>
+        <language tag="en-US">./en-US/en-US.com_userway.sys.ini</language>
+        <language tag="en-GB">./en-GB/en-GB.com_userway.ini</language>
+        <language tag="en-GB">./en-GB/en-GB.com_userway.sys.ini</language>
     </languages>
 
     <updateservers>
