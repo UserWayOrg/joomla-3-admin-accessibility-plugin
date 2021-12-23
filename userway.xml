@@ -50,10 +50,10 @@
     </administration>
 
     <languages folder="administrator/language">
-        <language tag="en-US">en-US/en-US.com_userway.ini</language>
-        <language tag="en-US">en-US/en-US.com_userway.sys.ini</language>
-        <language tag="en-GB">en-GB/en-GB.com_userway.ini</language>
-        <language tag="en-GB">en-GB/en-GB.com_userway.sys.ini</language>
+        <language tag="en-US">./en-US/en-US.com_userway.ini</language>
+        <language tag="en-US">./en-US/en-US.com_userway.sys.ini</language>
+        <language tag="en-GB">./en-GB/en-GB.com_userway.ini</language>
+        <language tag="en-GB">./en-GB/en-GB.com_userway.sys.ini</language>
     </languages>
 
     <updateservers>
