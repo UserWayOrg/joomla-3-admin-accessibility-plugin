@@ -22,6 +22,8 @@ ex:
     * @author UserWay Development Team
     * @copyright (C) $today.year - UserWay Inc.
     * @license GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+
 ### P.S.
 
+Use .zip file from GitHub releases
 Use [JED Checker](https://extensions.joomla.org/extension/jedchecker/) extension to verify plugin changes before the submission/installation.
